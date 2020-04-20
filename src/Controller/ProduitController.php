@@ -9,6 +9,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 
 /**
  * @Route("/produit")
@@ -36,6 +37,27 @@ class ProduitController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
+
+            $photo = $form->get('photo')->getData();
+            if($photo){
+                $nomPhoto = uniqid().'.'.$photo->guessExtension();
+
+                try{
+                    $photo->move(
+                        $this->getParameter('upload_dir'),
+                        $nomPhoto
+                    );
+                }
+                catch(FileException $e){
+                    $this->addFlash('error', "Impossible d'uploader l'image");
+                    return $this->redirectToRoute('produit_index');
+                }
+
+                $produit->setPhoto($nomPhoto);
+            }
+
+
+
             $entityManager->persist($produit);
             $entityManager->flush();
 
