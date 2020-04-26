@@ -4,17 +4,36 @@ Quantite: "Quantity"
 Prix: "Price"
 Envoyer: "Create"
 
+utilisateur:
+  titre: "User Page"
+  nom: "Lastname"
+  prenom: "Firstname"
+  mdp: "Password"
+  info: "No records found"
+  new: "Create a new user"
+
+security:
+  sign: 'Please sign in'
+  mdp: 'Password'
+
+register:
+  titre: "Register"
+  mdp: "Password"
+
 produits:
   produit: "Products"
   titre: "Product list"
+  description: "Decription"
   nom: "Name"
-  Photo: "Photo"
+  photo: "Photo"
   quantite: "Quantity"
   prix: "Price"
   supprimer: "Delete"
   noproduit: "Add a product"
   modifier: "Modify"
   creer: "Create"
+  stock: "Stock"
+  action: "Actions"
 
 panier:
   panier: "Basket"

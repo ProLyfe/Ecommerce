@@ -1,18 +1,18 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Utilisateur index{% endblock %}
+{% block title %}{{"utilisateur.titre"|trans}}{% endblock %}
 
 {% block body %}
-    <h1>Utilisateur index</h1>
+    <h1>{{"utilisateur.titre"|trans}}</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nom</th>
-                <th>Prenom</th>
+                <th>{{"utilisateur.nom"|trans}}</th>
+                <th>{{"utilisateur.prenom"|trans}}</th>
                 <th>Email</th>
-                <th>Mdp</th>
+                <th>{{"utilisateur.mdp"|trans}}</th>
                 <th>Roles</th>
                 <th>actions</th>
             </tr>
@@ -33,11 +33,11 @@
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">{{"utilisateur.info"|trans}}</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <a href="{{ path('utilisateur_new') }}">Create new</a>
+    <a href="{{ path('utilisateur_new') }}">{{"utilisateur.new"|trans}}</a>
 {% endblock %}

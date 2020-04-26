@@ -4,17 +4,36 @@ Quantite: "Quantite"
 Prix: "Prix"
 Envoyer: "Créer"
 
+utilisateur:
+  titre: "Page Utilisateur"
+  nom: "Nom"
+  prenom: "Prénom"
+  mdp: "Mot de passe"
+  info: "Aucun enregistrement trouvé"
+  new: "Créer un nouveau utilisateur"
+
+security:
+  sign: 'Se connecter'
+  mdp: 'Mot de passe'
+
+register:
+  titre: "S'inscire"
+  mdp: "Mot de passe"
+
 produits:
   produit: "Produits"
   titre: "Liste des Produits"
+  description: "Decription"
   nom: "Nom"
-  Photo: "Photo"
+  photo: "Photo"
   quantite: "Quantité"
   prix: "Prix"
   supprimer: "Supprimer"
   pasproduits: "Ajouter un produit"
   modifier: "Modifier"
   creer: "Créer"
+  stock: "Stock"
+  action: "Actions"
 
 panier:
   panier: "Panier"

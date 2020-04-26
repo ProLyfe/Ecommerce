@@ -3,25 +3,25 @@
 {% block title %}Produit index{% endblock %}
 
 {% block body %}
-    <h1>Produit index</h1>
+    <h1>{{ 'produits.titre'|trans}}</h1>
 
     <table class="table">
         <thead>
             <tr> 
                 <th>Id</th>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Prix</th>
-                <th>Stock</th>
-                <th>Photo</th>
-                <th>actions</th>
+                <th>{{ 'produits.nom'|trans}}</th>
+                <th>{{ 'produits.description'|trans}}</th>
+                <th>{{ 'produits.prix'|trans}}</th>
+                <th>{{ 'produits.stock'|trans}}</th>
+                <th>{{ 'produits.photo'|trans}}</th>
+                <th>{{ 'produits.action'|trans}}</th>
             </tr>
         </thead>
         <tbody>
         {% for produit in produits %}
             <tr>
                 <td>{{ produit.id }}</td>
-                <td>{{ produit.nom }}</td>
+                <td>{{ produit.nom}}</td>
                 <td>{{ produit.description }}</td>
                 <td>{{ produit.prix }}</td>
                 <td>{{ produit.stock }}</td>
