@@ -70,16 +70,71 @@ class ProduitController extends AbstractController
         ]);
     }
 
+
+
+
+
+
     /**
      * @Route("/{id}", name="produit_show", methods={"GET"})
      */
     public function show(Produit $produit): Response
     {
+
+if($produit != null){
+
+            if($this->getUser() == null){
+                $this->addFlash("danger", "Vous devez être connecté");
+                return $this->redirectToRoute('app_login');
+            }
+
+            $entityManager= $this->getDoctrine()->getManager();
+
+            if($panierRepository->findOneBy(['utilisateur' => $this->getUser(), 'etat' => false ]) == false){
+
+                $panier = new Panier();
+                $panier->setUtilisateur($this->getUser());
+                $panier->setDateAchat(new \DateTime());
+                $panier->setEtat(false);
+                $entityManager->persist($panier);
+                $entityManager->flush();
+
+            }
+            else{
+                $panier = $panierRepository->findOneBy(['utilisateur' => $this->getUser(), 'etat' => false]);
+            }
+
+            $contenuPanier = new ContenuPanier();
+            $form = $this->createForm(ContenuPanierType::class, $contenuPanier);
+            $form->handleRequest($request);
+
+            if($form->isSubmitted() && $form->isValid()){
+                $contenuPanier->setProduit($produit);
+                $contenuPanier->setPanier($panier);
+                $contenuPanier->setDate(new \DateTime());
+                $entityManager->persist($contenuPanier);
+                $entityManager->flush(); 
+                $this->addFlash("success", "Produit ajouté au panier");
+                return $this->redirectToRoute('contenu_panier_index');
+            }
+
+
         return $this->render('produit/show.html.twig', [
             'produit' => $produit,
+            'ajout_article' => $form->createView(),
         ]);
     }
 
+    else {       
+        $this->addFlash("danger","Impossible");
+
+    }
+    }  
+
+
+
+
+    
     /**
      * @Route("/{id}/edit", name="produit_edit", methods={"GET","POST"})
      */

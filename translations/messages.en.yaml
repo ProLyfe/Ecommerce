@@ -1,0 +1,42 @@
+Nom: "Name"
+Photo: "Photo"
+Quantite: "Quantity"
+Prix: "Price"
+Envoyer: "Create"
+
+produits:
+  produit: "Products"
+  titre: "Product list"
+  nom: "Name"
+  Photo: "Photo"
+  quantite: "Quantity"
+  prix: "Price"
+  supprimer: "Delete"
+  noproduit: "Add a product"
+  modifier: "Modify"
+  creer: "Create"
+
+panier:
+  panier: "Basket"
+  titre: "Your basket"
+  pasproduit: "Your basket is empty"
+  montant: "Total amount"
+  total: "Total price"
+  acheter: "Buy"
+  ajouterpanier: "Add to Cart"
+  supprimer: "Delete"
+
+
+fichier:
+  erreur: "The file could not be uploaded"
+
+flash:
+  produit:
+    cree: "Your product has been created"
+    ajoutpanier: "Product added to shopping cart"
+    stock: "You cannot add more product"
+    supprimer: "The product has been deleted"
+  panier:
+    supprimer: "The product has been removed from the basket"
+    acheter: "Your product has been purchased"
+    pasacheter: "The basket is not validated"

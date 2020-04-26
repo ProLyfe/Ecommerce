@@ -1,0 +1,42 @@
+Nom: "Nom"
+Photo: "Photo"
+Quantite: "Quantite"
+Prix: "Prix"
+Envoyer: "Créer"
+
+produits:
+  produit: "Produits"
+  titre: "Liste des Produits"
+  nom: "Nom"
+  Photo: "Photo"
+  quantite: "Quantité"
+  prix: "Prix"
+  supprimer: "Supprimer"
+  pasproduits: "Ajouter un produit"
+  modifier: "Modifier"
+  creer: "Créer"
+
+panier:
+  panier: "Panier"
+  titre: "Votre panier"
+  pasproduit: "Votre panier est vide"
+  montant: "Montant total"
+  total: "Prix total"
+  acheter: "Acheter"
+  ajouterpanier: "Ajouter au panier"
+  supprimer: "Supprimer"
+
+
+fichier:
+  erreur: "Le fichier n'a pas pu être uploadé"
+
+flash:
+  produit:
+    cree: "Votre produit à bien été créé"
+    ajoutpanier: "Produit ajouté au panier"
+    stock: "Vous ne pouvez pas ajouter plus de produit"
+    supprimer: "Le produit a bien été supprimé"
+  panier:
+    supprimer: "Le produit a été retiré du panier"
+    acheter: "Votre produit à bien été acheté ! ;)"
+    pasacheter: "Le panier n'est pas validé"

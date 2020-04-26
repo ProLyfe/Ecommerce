@@ -26,3 +26,4 @@ class ContenuPanierType extends AbstractType
         ]);
     }
 }
+// panier

@@ -7,7 +7,7 @@
 
     <table class="table">
         <thead>
-            <tr>
+            <tr> 
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Description</th>
@@ -26,11 +26,12 @@
                 <td>{{ produit.prix }}</td>
                 <td>{{ produit.stock }}</td>
                 <td><div class="card" style="width: 18rem;">
-                            <img src="{{asset('/uploads/'~ produit.photo)}} " style="height: 10%; width: 100%">
+                            <img src="{{asset('/uploads/'~ produit.photo)}} " style="height: 5%; width: 49%">
                         </div></td>
                 <td>
                     <a href="{{ path('produit_show', {'id': produit.id}) }}">show</a>
                     <a href="{{ path('produit_edit', {'id': produit.id}) }}">edit</a>
+                    <a href="{{ path('panier_index', {'id': produit.id}) }}">Ajouter au panier</a>
                 </td>
             </tr>
         {% else %}
