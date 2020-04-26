@@ -1,4 +1,9 @@
 security:
+    access_denied_url: /utilisateur
+    role_hierarchy:
+            ROLE_AUTHOR: ROLE_USER
+            ROLE_ADMIN: [ROLE_AUTHOR, ROLE_USER]
+
     encoders:
         App\Entity\User:
             algorithm: auto
@@ -23,7 +28,7 @@ security:
             logout:
                 path: app_logout
                 # where to redirect after logout
-                # target: app_any_route
+                # target: index
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
@@ -35,5 +40,5 @@ security:
     # Note: Only the *first* access control that matches will be used
     access_control:
         # - { path: ^/admin, roles: ROLE_ADMIN }
-        # - { path: ^/admin, roles: SUPER_ADMIN }
+        # - { path: ^/author, roles: ROLE_AUTHOR }
         # - { path: ^/profile, roles: ROLE_USER }
